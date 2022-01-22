@@ -53,14 +53,13 @@ button,input,textarea,select,h1{
 .survey__title {
   font-weight: 700;
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   color: black;
 }
 .survey__label{
   display: flex;
   align-items: center;
-}
-.survey__label~.survey__label{
+  cursor: pointer;
   margin-top: 1rem;
 }
 .survey__input {
@@ -78,10 +77,11 @@ button,input,textarea,select,h1{
   height: 1rem;
   background: white;
   border: .3rem solid white;
-  border-radius: 1rem;
   outline: .2rem solid #666;
+  border-radius: 1rem;
   display: block;
-  margin-right: 1rem ;
+  margin-right: 1rem;
+  margin-left: .3rem;
 }
 .survey__radio:checked + label::before {
   background: black;
@@ -90,11 +90,51 @@ button,input,textarea,select,h1{
 .survey__checkbox {
   display: none;
 }
+.survey__checkbox + label::before{
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  background: white;
+  outline: .2rem solid #666;
+  margin-right: 1rem;
+  margin-left: .3rem;
+  font-weight: 700;
+}
+.survey__checkbox:checked + label::before{
+  content: "✔";
+  color: black;
+  outline: .2rem solid black;
+  line-height: 1.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
 .survey__select {
   width: 100%;
   padding: 2rem 0;
   border: none;
   border-bottom: 1px solid black;
+  cursor: pointer;
+  appearance: none;
+}
+.survey__select::-ms-expand {
+  display: none;
+}
+.survey__select:not([multiple]){
+  /*  background: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M70.3 13.8L40 66.3 9.7 13.8z' fill='%23000'%3E%3C/path%3E%3C/svg%3E") 
+    100% 50% no-repeat;  */
+  background: 
+    url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')
+    100% 50% no-repeat;
+  background-size: .8rem;
+}
+.survey__select[multiple] option{
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+.survey__select[multiple] option:checked::after{
+  content: "✓";
 }
 .survey__textarea {
   width: 100%;
@@ -104,5 +144,22 @@ button,input,textarea,select,h1{
   padding: 2rem 0;
 }
 .survey__submit {
+  border: 1px solid black;
+  color: white;
+  background: black;
+  padding: 1.2em 3em;
+  border-radius: 2em;
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 auto;
+  display: block;
+  transition: all .2s linear;
 }
-
+.survey__submit:hover{
+  color: black;
+  background: white;
+}
+.survey__submit:active{
+  background: gray;
+}

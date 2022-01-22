@@ -5,8 +5,8 @@ import './index.css';
 
 
 const App = () => (
-  <div className="container">
-    <div className="survey">
+  <div className="survey">
+    <div className="container">
       <h1 className="survey__header">Анкета</h1>
       <form className="survey__form">
         <ul className="survey__list">
@@ -21,11 +21,11 @@ const App = () => (
           <li className="survey__item">
             <div className="survey__title">Пол</div>
             <input className="survey__radio" type="radio" name="gender" value="Женский" id="female"/><label className="survey__label" for="female">Женский</label>
-            <input className="survey__radio" type="radio" name="gender" value="Мужской" id="male"/><label className="survey__label" for="male">Мужской</label>
+            <input className="survey__radio" type="radio" name="gender" value="Мужской" id="male" checked/><label className="survey__label" for="male">Мужской</label>
           </li>
           <li className="survey__item">
             <div className="survey__title">Семейное положение</div>
-            <label className="survey__label"><input className="survey__checkbox" name="married" type="checkbox"/>Состою в браке</label>
+            <input className="survey__checkbox" name="married" type="checkbox" id="married"/><label className="survey__label" for="married">Состою в браке</label>
           </li>
           <li className="survey__item">
             <div className="survey__title">Дети младше 18 лет</div>
