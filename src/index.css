@@ -33,6 +33,7 @@ button,input,textarea,select,h1{
 .container{
   max-width: 80rem;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 .survey {
 }
@@ -71,7 +72,7 @@ button,input,textarea,select,h1{
 .survey__radio {
   display: none;
 }
-.survey__radio + label::before {
+.survey__radio + .survey__label::before {
   content: "";
   width: 1rem;
   height: 1rem;
@@ -83,14 +84,14 @@ button,input,textarea,select,h1{
   margin-right: 1rem;
   margin-left: .3rem;
 }
-.survey__radio:checked + label::before {
+.survey__radio:checked + .survey__label::before {
   background: black;
   outline: .2rem solid black;
 }
 .survey__checkbox {
   display: none;
 }
-.survey__checkbox + label::before{
+.survey__checkbox + .survey__label::before{
   content: "";
   width: 1.5rem;
   height: 1.5rem;
@@ -100,7 +101,7 @@ button,input,textarea,select,h1{
   margin-left: .3rem;
   font-weight: 700;
 }
-.survey__checkbox:checked + label::before{
+.survey__checkbox:checked + .survey__label::before{
   content: "✔";
   color: black;
   outline: .2rem solid black;
@@ -128,12 +129,12 @@ button,input,textarea,select,h1{
     100% 50% no-repeat;
   background-size: .8rem;
 }
-.survey__select[multiple] option{
+.survey__select[multiple] .survey__option{
   background-color: #fff;
   display: flex;
   justify-content: space-between;
 }
-.survey__select[multiple] option:checked::after{
+.survey__select[multiple] .survey__option:checked::after{
   content: "✓";
 }
 .survey__textarea {
