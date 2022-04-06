@@ -43,7 +43,7 @@ class App extends Component{
             <ul className="survey__list">
               <li className="survey__item">
                 <div className="survey__title">ФИО</div>
-                <input className="survey__input" placeholder="Иванов Иван Иванович" ref={this.fio} defaultValue="Тест"/>
+                <input className="survey__input" placeholder="Иванов Иван Иванович" ref={this.fio}/>
               </li>
               <li className="survey__item">
                 <div className="survey__title">Электронная почта</div>
